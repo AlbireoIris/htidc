@@ -1,0 +1,6 @@
+echo "删除并创建新表和新的索引"
+echo "sqlplus shqx/pwdidc@snorcl11g_119 @crttab.sql"
+echo "创建dba用户，记得改参数"
+echo "sqlplus / as sysdba @creuser.sql"
+echo "清空表并重置序列号"
+echo "sqlplus shqx/pwdidc@snorcl11g_119 @cleantab.sql"

@@ -111,11 +111,11 @@ int main(int argc, char *argv[])
 
   //新目录下需要改动
   fprintf(fp, "#可执行程序目录路径\n");
-  fprintf(fp, "BINHOME = /htidc/public/bin\n\n");
+  fprintf(fp, "BINHOME = /htidc/shqx/bin\n\n");
 
   //新目录下需要改动
   fprintf(fp, "#备份目录路径\n");
-  fprintf(fp, "CBAK = /htidc/public/c_bak\n\n");
+  fprintf(fp, "CBAK = /htidc/shqx/c_bak\n\n");
 
   fprintf(fp, "#libfreecplus.so的引用\n");
   fprintf(fp, "FREECPLUSLIB = -l_freecplus -lcJSON \n\n");
@@ -177,8 +177,8 @@ int main(int argc, char *argv[])
       strcat(matchfile, " -lpthread ");
 
     fprintf(fp, "%s\n", matchfile);
-    fprintf(fp, "\tcp %s $(BINHOME)/%s \n", strfile[acc], strfile[acc]);
-    fprintf(fp, "\tcp %s.cpp $(CBAK)/%s.cpp \n\n", strfile[acc], strfile[acc]);
+//    fprintf(fp, "\tcp %s $(BINHOME)/%s \n", strfile[acc], strfile[acc]);
+//    fprintf(fp, "\tcp %s.cpp $(CBAK)/%s.cpp \n\n", strfile[acc], strfile[acc]);
   }
 
   fprintf(fp, "clean:\n\trm -rf ");

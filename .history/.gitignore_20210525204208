@@ -1,4 +1,4 @@
 #忽略所有文件
-build
+/build
 .git
-.vscode
+

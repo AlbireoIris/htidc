@@ -1,0 +1,9 @@
+#忽略所有文件
+*
+#添加cpp文件
+!*.cpp
+!*.c
+!makefile
+!README
+!*.bak
+!*

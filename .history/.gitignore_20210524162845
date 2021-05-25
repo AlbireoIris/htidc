@@ -1,0 +1,11 @@
+#忽略所有文件
+*
+#添加文件
+!*.cpp
+!*.c
+!makefile
+!README
+!*.bak
+!*.sh
+!*.bak
+!*.h

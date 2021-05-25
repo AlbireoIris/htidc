@@ -1,0 +1,9 @@
+cmake_minimum_required(VERSION 2.8)
+
+project(htidc_public)
+
+#将lib库加入工程之中，
+include_directories(../lib)
+
+
+

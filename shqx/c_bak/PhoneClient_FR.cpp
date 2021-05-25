@@ -25,6 +25,9 @@ int main(int argc, char const *argv[])
       return 0;
     
     printf("biz1001=%lf\n",Timer.Elapsed());
+    
+    
+    
 
     sleep(1);
 

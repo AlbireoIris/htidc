@@ -1,0 +1,6 @@
+
+cmake_minimum_required(VERSION 2.8)
+
+project(htidc-main)
+
+add_executable("a_cmake a.cpp")

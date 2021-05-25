@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/htidc/public/c/a.cpp
+stdio.h
+-
+dirent.h
+-
+string.h
+-
+unistd.h
+-
+stdlib.h
+-
+string
+-
+

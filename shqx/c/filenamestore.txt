@@ -1,9 +1,0 @@
-wgetrain24_FR
-test_OR_FR
-PhoneClient_FR
-autorecord_FR_OR
-psurfdbtopic_FR_OR
-psurfpictodb_FR_OR
-psurfdata_old_FR_OR
-a
-wgettemp24_FR

@@ -505,7 +505,7 @@ GLOBALDEF int FtpConnect(const char *host, netbuf **nControl)
 	    return 0;
     	}
 #endif
-    	memcpy((char *)&sin.sin_addr, phe->h_addr, phe->h_length);
+    	memcpy((char *)&sin.sin_addr, phe->h_addr_list, phe->h_length);
     }
     free(lhost);
     sControl = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);

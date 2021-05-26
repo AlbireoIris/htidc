@@ -17,4 +17,3 @@ clean:
 
 
 #g++ -fPIC -shared -o lib_ftp.so libftp.so _ftp.cpp  //ftplib
-#

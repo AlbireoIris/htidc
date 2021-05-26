@@ -1,0 +1,17 @@
+deletetables_FR_OR
+wgetpic_FR
+incregather_OR_FR
+deletetablesF_FR_OR
+tcpputfiles_FR
+tcpfilesservermpt_FR_MP
+tcpgetfiles_FR
+ftpgetfile_FR_FT
+batchclean_FR
+exptables_FR_OR
+HelloVSCode
+a
+tcpfilesservermp_FR
+ftpputfile_FR_FT
+deletefiles_FR
+deletefilesR_FR
+test_FR_OR

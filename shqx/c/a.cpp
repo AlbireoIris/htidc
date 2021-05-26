@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
   char pwdfilenamestore[256];
   memset(pwdfilenamestore, 0, sizeof(pwdfilenamestore));
-  sprintf(pwdfilenamestore, "%s/filenamestore.txt", strpwd);
+  sprintf(pwdfilenamestore, "%s/FileNameCache.txt", strpwd);
 
   FILE *temp = 0;
   temp = fopen(pwdfilenamestore, "a");
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
   FILE *fpsr = 0;
   if ((fpsr = fopen(pwdfilenamestore, "w")) == 0)
   {
-    printf("open the filenamestore.txt failed!\n");
+    printf("open the filenamestore failed!\n");
     return -1;
   }
 
@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
     {
       strncpy(strfile[itotalcount], stdinfo->d_name, strlen(stdinfo->d_name) - 4);
       if (strstr(filetemp, strfile[itotalcount]) == NULL)
-        printf("%s 追加完成！ \n", strfile[itotalcount]);
+        printf("%s Append! \n", strfile[itotalcount]);
       fprintf(fpsr, "%s\n", strfile[itotalcount]);
       itotalcount++;
     }
@@ -98,30 +98,28 @@ int main(int argc, char *argv[])
 
   fprintf(fp, "\n\n");
 
-  //以下是通用的文件
-  fprintf(fp, "# 警告处理\n");
-  fprintf(fp, "CFLAGS = -Wno-write-strings -g#-Wno-unused-variable\n\n");
+  fprintf(fp, "# 警告忽略处理\n");
+  fprintf(fp, "CFLAGS = -Wno-write-strings -Wno-unused-variable\n\n");
 
-  //这个暂时用不到
-  fprintf(fp, "# CFLAGS = -O2\n");
-  fprintf(fp, "#CFLAGS = -O2 -Wall\n\n");
+  fprintf(fp, "# 2级优化，显示所有警告\n");
+  fprintf(fp, "# CFLAGS = -O2 -Wall\n\n");
 
   fprintf(fp, "#库文件目录路径\n");
   fprintf(fp, "PUBLICHOME = /htidc/public/lib\n\n");
 
-  //新目录下需要改动
+  //新目录下需要改动,现在不需要了
   fprintf(fp, "#可执行程序目录路径\n");
-  fprintf(fp, "BINHOME = /htidc/shqx/bin\n\n");
+  fprintf(fp, "BINHOME = ../bin\n\n");
 
-  //新目录下需要改动
+  //新目录下需要改动,现在不需要了
   fprintf(fp, "#备份目录路径\n");
-  fprintf(fp, "CBAK = /htidc/shqx/c_bak\n\n");
+  fprintf(fp, "CBAK = ../csrcbak\n\n");
 
-  fprintf(fp, "#libfreecplus.so的引用\n");
-  fprintf(fp, "FREECPLUSLIB = -l_freecplus -lcJSON \n\n");
+  fprintf(fp, "#freecplus相关动态库的路径\n");
+  fprintf(fp, "FREECPLUSLIB = -l_freecplus -l_json -lcJSON \n\n");
 
-  fprintf(fp, "#通用库ftp路径\n");
-  fprintf(fp, "FTPLIB = -l_ftp\n\n");
+  fprintf(fp, "#ftp相关动态库的路径\n");
+  fprintf(fp, "FTPLIB = -l_ftp -lcftp \n\n");
 
   //以下是oracle库文件的部分
   fprintf(fp, "# oracle头文件路径\n");
@@ -155,22 +153,22 @@ int main(int argc, char *argv[])
 
     char matchfile[256];
     memset(matchfile, 0, sizeof(matchfile));
-    sprintf(matchfile, "\tg++ $(CFLAGS) -o %s %s.cpp -lm -lc", strfile[acc], strfile[acc]);
+    sprintf(matchfile, "\tg++ $(CFLAGS) -g -o %s %s.cpp -lm -lc", strfile[acc], strfile[acc]);
 
     //指定库文件目录
     strcat(matchfile, " -I$(PUBLICHOME) -L$(PUBLICHOME) ");
 
     //添加freecplus依赖
     if (strstr(strfile[acc], "_FR") != NULL)
-      strcat(matchfile, "$(IFREECPLUS)");
+      strcat(matchfile, " $(IFREECPLUS) ");
 
     //添加ooci依赖
     if (strstr(strfile[acc], "_OR") != NULL)
-      strcat(matchfile, "$(IOCCI)");
+      strcat(matchfile, " $(IOCCI) ");
 
     //添加ftp依赖
     if (strstr(strfile[acc], "_FT") != NULL)
-      strcat(matchfile, "$(IFTP)");
+      strcat(matchfile, " $(IFTP) ");
 
     //添加多线程函数库的依赖
     if (strstr(strfile[acc], "_MP") != NULL)

@@ -32,8 +32,6 @@ int main(int argc, char *argv[])
 
   //打开目标文件夹
   int total = 0;
-
-  CJson_Array Arry;
   
   if (argc == 3)
   {

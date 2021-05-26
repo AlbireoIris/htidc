@@ -26,6 +26,7 @@
 #include <fcntl.h>
 #include <limits.h>
 #include <time.h>
+
 #include <math.h>
 #include <stdarg.h>
 #include <errno.h>
@@ -45,6 +46,7 @@
 #include <assert.h>
 
 #include <iostream>
+#include <ctime>
 #include <string>
 #include <cstdlib>
 #include <cstring>

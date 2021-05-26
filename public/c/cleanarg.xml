@@ -1,0 +1,14 @@
+//一共四个字段，解释一下作用 
+//TargetDir 字段指定删除文件的目录 
+//MatchRule 字段指定删除文件的规则，支持简单的文件通配符
+//CleanTime 字段指定删除文件的时间期限，单位：分钟 支持数学表达式 例如一周就是 7*24*60
+//MinNum    字段指定保留文件的数量
+//MaxSize   字段指定删除文件的大小，当大于10240时就会删除，优先级高于保留文件的数量
+//可添加"//"作为注释
+//<TargetDir></TargetDir><MatchRule></MatchRule><CleanTime></CleanTime><MinNum></MinNum><MaxSize></MaxSize>
+<TargetDir>/data/shqx/autorecord</TargetDir><MatchRule>*</MatchRule><CleanTime>7*24*60</CleanTime><MinNum>10</MinNum><MaxSize>10240</MaxSize>
+<TargetDir>/log/shqx</TargetDir><MatchRule>*log</MatchRule><CleanTime>7*24*60</CleanTime><MinNum>10</MinNum><MaxSize>1</MaxSize>
+<TargetDir>/data/shqx/spcc</TargetDir><MatchRule>*RFFC-SCMOC*</MatchRule><CleanTime>7*24*60</CleanTime><MinNum>10</MinNum><MaxSize>10240</MaxSize>
+<TargetDir>/data/shqx/spcc</TargetDir><MatchRule>*SNWFD6H*</MatchRule><CleanTime>7*24*60</CleanTime><MinNum>10</MinNum><MaxSize>10240</MaxSize>
+<TargetDir>/data/shqx/spcc</TargetDir><MatchRule>*SNWFD*</MatchRule><CleanTime>7*24*60</CleanTime><MinNum>10</MinNum><MaxSize>10240</MaxSize>
+<TargetDir>/data/sdata/surfdata</TargetDir><MatchRule>*</MatchRule><CleanTime>7*24*60</CleanTime><MinNum>10</MinNum><MaxSize>10240</MaxSize>

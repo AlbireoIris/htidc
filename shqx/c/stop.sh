@@ -1,0 +1,1 @@
+killall ftpgetfile_FR_FT crtsurfdata psurfdata_old

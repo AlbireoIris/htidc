@@ -1,8 +1,0 @@
-#约束cmake的最低版本 cmake的指令
-cmake_minimum_required(VERSION 2.8)
-
-#进行工程的重命名
-project(htidc-main)
-
-#添加需要编译文件 
-add_executable("a_cmake a.cpp")
